@@ -10,8 +10,17 @@ namespace ConsoleAppLearnTryCatch
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
-            person.Output();
+            Console.Write("Введите номер задачи: ");
+            byte number = byte.Parse(Console.ReadLine());
+
+            if (number == 1)
+            {
+                Person person = new Person();
+                person.Output();
+            }
+
+
+
             Console.ReadLine();
         }
     }
