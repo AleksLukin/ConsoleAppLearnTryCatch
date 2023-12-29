@@ -95,29 +95,24 @@ namespace ConsoleAppLearnTryCatch
     {
         public void DivideNumber()
         {
-            Console.Write("Введите первое число ");
-            string first = Console.ReadLine();
-            bool resultOne = int.TryParse(first, out int numberOne);
-
-            Console.Write("Введите второе число ");
-            string second = Console.ReadLine();
-            bool resultTwo = int.TryParse(second, out int numberTwo);
-
-            if (resultOne == true && resultTwo == true)
+            try
             {
-                if (numberOne != 0 && numberTwo != 0)
-                {
-                    Console.WriteLine(numberOne/numberTwo);
-                }
-                else
-                {
-                    Console.WriteLine("Одно из чисел равно нулю!");
-                }
+                Console.Write("Введите первое число ");
+                int numberOne = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Введите второе число ");
+                int numberTwo = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Результат деления двух чисел равен "+numberOne/numberTwo);
             }
-            if (resultOne == false || resultTwo == false)
+            catch (FormatException)
             {
-                Console.WriteLine("Число не было введено!");
+                Console.WriteLine("Число не введено");
             }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Нельзя делить на ноль!");
+            }
+
         }
     }
 }
