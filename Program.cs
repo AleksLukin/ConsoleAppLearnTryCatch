@@ -24,7 +24,15 @@ namespace ConsoleAppLearnTryCatch
                 Number number1 = new Number();
                 number1.DivideNumber();
             }
-
+            if (number == 3)
+            {
+                Book bookOne = new Book("Пушкин", "Повести Белкина");
+                Book bookTwo = new Book("Дюма", "Три мушкетера");
+                Book bookThree = new Book("Лермонтов", "Мцири");
+                Book bookFour = new Book("Дюма", "Граф Монте-Кристо");
+                Book bookFift = new Book("Пушкин", "Евгений Онегин");
+                Book bookSix = new Book("Гоголь", "Мертвые души");
+            }
             Console.ReadLine();
         }
     }
@@ -90,7 +98,6 @@ namespace ConsoleAppLearnTryCatch
         /// </summary>
 
     }
-
     class Number
     {
         public void DivideNumber()
@@ -114,6 +121,45 @@ namespace ConsoleAppLearnTryCatch
             }
 
         }
+    }
+    class Book
+    {
+        private string nameWriter;
+        private string nameBook;
+        
+        /// <summary>
+        /// Опишите, используя Класс, каталог книг в библиотеке.Составьте программу, выдающую
+        /// список книг А.Дюма, хранящихся в библиотеке
+        /// </summary>
+        public Book(string nameWriter, string nameBook)
+        {
+            this.nameWriter = nameWriter;
+            this.nameBook = nameBook;
+
+            if (nameWriter == "Дюма")
+            {
+                Console.WriteLine("Книга - {0}, автор - {1}", nameBook, nameWriter);
+            }
+        }
+
+    }
+    class History
+    {
+        private int date;
+        private string incident;
+
+        /// <summary>
+        /// Опишите, используя Класс, таблицу дат и событий русской истории.Составьте программу,
+        /// выдающую список событий XIX века
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="incident"></param>
+        public History(int date, string incident) 
+        {
+
+
+        }   
+
     }
 }
 
