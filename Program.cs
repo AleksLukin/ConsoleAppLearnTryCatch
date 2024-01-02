@@ -33,6 +33,15 @@ namespace ConsoleAppLearnTryCatch
                 Book bookFift = new Book("Пушкин", "Евгений Онегин");
                 Book bookSix = new Book("Гоголь", "Мертвые души");
             }
+            if (number == 4)
+            {
+                History eventOne = new History(1991, "Распад СССР");
+                History eventTwo = new History(1861, "Конец крепостного права"); 
+                History eventThree = new History(1812, "Отчественная война");
+                History eventFour = new History(1945, "Окончание ВОВ");
+                History eventFive = new History(1703, "Строительство СПб");
+                History eventSix = new History(2000, "Миллениум");
+            }
             Console.ReadLine();
         }
     }
@@ -145,18 +154,24 @@ namespace ConsoleAppLearnTryCatch
     }
     class History
     {
-        private int date;
+        private int year;
         private string incident;
 
         /// <summary>
         /// Опишите, используя Класс, таблицу дат и событий русской истории.Составьте программу,
         /// выдающую список событий XIX века
         /// </summary>
-        /// <param name="date"></param>
+        /// <param name="year"></param>
         /// <param name="incident"></param>
-        public History(int date, string incident) 
+        public History(int year, string incident) 
         {
+            this.year = year;
+            this.incident = incident;
 
+            if (year <= 1900 && year >= 1801)
+            {
+                Console.WriteLine("Год - {0}, событие - {1}",year,incident);
+            }
 
         }   
 
